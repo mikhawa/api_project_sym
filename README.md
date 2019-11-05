@@ -90,3 +90,16 @@ Créons ensuite la méthode "accueil" et appelons avec use le générateur de r�
             return new Response('mon premier texte envoyé... bon ok Hello World');
         }
     }
+## Le routing avancé
+### Les annotations
+#### Dans config/routes.yaml :
+recommentez les lignes
+
+    #index:
+    #    path: /
+    #    controller: App\Controller\ArticleController::accueil
+
+### Installation des annotations
+
+    composer require annotations
+    
