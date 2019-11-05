@@ -173,4 +173,6 @@ Pour tester la sécurité de nos dépendances :
 
     php bin/console security:check
     
+### Installation de Twig
 
+    composer require twig
