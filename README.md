@@ -60,3 +60,33 @@ Puis changeons le chemin vers un contrôleur que nous allons créer :
     index:
         path: /
         controller: App\Controller\ArticleController::accueil
+### Création manuelle d'un contrôleur
+Créons une class ArticleController dans src/Controller
+       
+       <?php
+       namespace App\Controller;
+       
+       
+       class ArticleController
+       {
+       
+       }        
+Créons ensuite la méthode "accueil" et appelons avec use le générateur de réponse 
+
+    <?php
+    
+    // nom de l'espace de travail
+    namespace App\Controller;
+    
+    // dépendance pour envoyer une réponse :
+    use Symfony\Component\HttpFoundation\Response;
+    
+    // class
+    class ArticleController
+    {
+        // méthode d'accueil
+        public function accueil()
+        {
+            return new Response('mon premier texte envoyé... bon ok Hello World');
+        }
+    }
