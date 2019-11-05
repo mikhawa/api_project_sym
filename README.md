@@ -176,3 +176,61 @@ Pour tester la sécurité de nos dépendances :
 ### Installation de Twig
 
     composer require twig
+### Pour utiliser Twig
+Importez le contrôleur Abstrait dans votre contrôleur
+
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+Et utilisez-le en étendant votre classe actuelle avec extend
+
+    class ArticleController extends AbstractController   
+Vous pouvez ensuite appeler la vue par défaut du dossier templates nommé base.html.twig :
+
+     // nom de l'espace de travail
+     namespace App\Controller;
+     
+     // dépendance pour utiliser Twig et les autres dépendances liées au contrôleur:
+     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+     // dépendance pour envoyer une réponse :
+     use Symfony\Component\HttpFoundation\Response;
+     // dépendance pour les annotations
+     use Symfony\Component\Routing\Annotation\Route;
+     
+     // class
+     class ArticleController extends AbstractController
+     {
+         // méthode d'accueil avec annotations
+         /**
+          * @Route("/")
+          */
+         public function accueil()
+         {
+             return new Response('mon premier texte envoyé... bon ok Hello World');
+         }
+         
+     
+         /**
+          * @Route("/news/{slug}")
+          */
+         public function show($slug)
+         {
+             return $this->render('base.html.twig',[
+                 "texte"=>(sprintf(
+                 'Le nom de la page sera: "%s"',
+                 $slug))]
+             );
+         }
+     }
+Vous devez ensuite placer la variable "texte" dans base.html.twig 
+
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>{% block title %}Welcome!{% endblock %}</title>
+                {% block stylesheets %}{% endblock %}
+            </head>
+            <body>
+                {% block body %}<h3>{{ texte }}</h3>{% endblock %}
+                {% block javascripts %}{% endblock %}
+            </body>
+        </html>
