@@ -161,3 +161,16 @@ un nom par défaut a été créé: espaceDeTravail_class_methode
             $slug
         ));
     } 
+### Installons le checker de sécurité
+
+    composer require sec-checker --dev
+    
+sec-checker n'existe pas vraiment, c'est FLEX, intégré à Symfony, qui va chercher les dépendances proches de celles demandées!
+
+Il installe réellement sensiolabs/security-checker !
+
+Pour tester la sécurité de nos dépendances :
+
+    php bin/console security:check
+    
+
