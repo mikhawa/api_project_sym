@@ -122,3 +122,42 @@ recommentez les lignes
             return new Response('mon premier texte envoyé... bon ok Hello World');
         }
     }   
+#### Créons une autre route en annotations : 
+Avec cette URL : 
+http://127.0.0.1:8000/news/belle-page
+
+Dans notre contôleur:
+
+    /**
+     * @Route("/")
+     */
+    public function accueil()
+    {
+        return new Response('mon premier texte envoyé... bon ok Hello World');
+    }
+    
+    /**
+     * @Route("/news/belle-page")
+     */
+    public function voir()
+    {
+        return new Response('Voici l\'URL d\'un article!');
+    }   
+    
+### Pour débuguer vos routes :
+
+     php bin/console debug:router
+un nom par défaut a été créé: espaceDeTravail_class_methode    
+
+### On veut rendre ces routes dynamiques :
+
+    /**
+     * @Route("/news/{slug}")
+     */
+    public function show($slug)
+    {
+        return new Response(sprintf(
+            'Le nom de la page sera: "%s"',
+            $slug
+        ));
+    } 
