@@ -37,6 +37,26 @@ Tapez simplement dans la console:
 ### On va ajouter un service important: le Serveur!
 
     composer require server   
-### Pour lancer le Serveur, il suffit maintenant d'écire
+### Pour lancer le Serveur, il suffit maintenant d'écire :
 
     php bin/console server:run
+Et utiliser ctrl+c pour arrêter le serveur, vous remarquez que vous voyez les logs dans pages appelées.
+## Routing par défaut : 
+#### config/routes.yaml
+Remplacez : 
+
+    #index:
+    #    path: /
+    #    controller: App\Controller\DefaultController::index
+Par (avec ctrl+/)
+
+    index:
+        path: /
+        controller: App\Controller\DefaultController::index
+Attention les fichiers yaml sont très stricts, ils servent à la configuration des serveurs, les tabulations sont en fait 4 espaces!
+
+Puis changeons le chemin vers un contrôleur que nous allons créer :
+    
+    index:
+        path: /
+        controller: App\Controller\ArticleController::accueil
