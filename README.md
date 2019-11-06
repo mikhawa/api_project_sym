@@ -247,4 +247,6 @@ Elle est la même que vue précédement:
     {% for comment in comments %}
         <li>{{ comment }}</li>
     {% endfor %}    
-    
+### Installation du profiler
+
+    composer require profiler --dev    
