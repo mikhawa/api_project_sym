@@ -293,4 +293,6 @@ On obtient les librairies qui compose le pack, on peut ainsi ne garder que celle
             "symfony/profiler-pack": "*",
             "symfony/var-dumper": "*"
         },
-            
+### Récupérez le fichier base.html.twig
+Dans l'archives datas/code-symfony.zip dans start/tutorial/templates/
+et remplacez l'existant          
