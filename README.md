@@ -268,4 +268,8 @@ Cette barre est très utile en mode développement !
     {% block body %}<h3>{{ texte }}</h3>
     {{ dump(texte) }}{% endblock %}        
     
-    
+### installation d'outils de débogage
+
+    composer require debug --dev  
+Le dump apparaît maintenant dans la barre du profiler
+     
