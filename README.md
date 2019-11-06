@@ -295,4 +295,11 @@ On obtient les librairies qui compose le pack, on peut ainsi ne garder que celle
         },
 ### Récupérez le fichier base.html.twig
 Dans l'archives datas/code-symfony.zip dans start/tutorial/templates/
-et remplacez l'existant          
+et remplacez l'existant      
+
+### Pour vider le cache
+Utilisez la commande:
+
+    php bin/console cache:clear
+    
+        
