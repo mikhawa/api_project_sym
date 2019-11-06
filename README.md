@@ -234,3 +234,17 @@ Vous devez ensuite placer la variable "texte" dans base.html.twig
                 {% block javascripts %}{% endblock %}
             </body>
         </html>
+### Gestion de Twig
+Elle est la même que vue précédement: 
+#### Pour étendre la vue :
+
+    {% extends 'base.html.twig' %}
+#### Les filtres de base :
+
+    {{ name|upper|lower|upper|lower|upper }}
+#### Les boucles en twig
+
+    {% for comment in comments %}
+        <li>{{ comment }}</li>
+    {% endfor %}    
+    
