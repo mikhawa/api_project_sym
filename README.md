@@ -313,4 +313,17 @@ en cherchant simplement dans public
      <link rel="stylesheet" href="/css/font-awesome.css">
      <link rel="stylesheet" href="/css/styles.css">
      
-     
+### chargement d'asset, pour la gestion des fichiers front-end
+
+    composer require asset     
+    
+#### Chargement dynamique grâce à asset()
+    {% block stylesheets %}
+        <link rel="stylesheet" 
+        href="{{ asset('css/font-awesome.css') }}">
+        <link rel="stylesheet" 
+        href="{{ asset('css/styles.css') }}">
+    Ligne 35:  <img class="nav-profile-img rounded-circle" 
+    src="{{ asset('images/astronaut-profile.png') }}">  
+    
+      
