@@ -28,7 +28,8 @@ class ArticleController extends AbstractController
      */
     public function show($slug)
     {
-        return $this->render('base.html.twig',[
+        dump($slug, $this);
+        return $this->render('news/news.html.twig',[
             "texte"=>(sprintf(
             'Le nom de la page sera: "%s"',
             $slug))]

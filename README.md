@@ -250,3 +250,22 @@ Elle est la même que vue précédement:
 ### Installation du profiler
 
     composer require profiler --dev    
+Cette barre est très utile en mode développement !    
+
+#### dump dans le contrôleur
+
+    public function show($slug)
+    {
+        dump($slug, $this);
+        return $this->render('news/news.html.twig',[
+            "texte"=>(sprintf(
+            'Le nom de la page sera: "%s"',
+            $slug))]
+        );
+    }
+#### dump dans Twig
+
+    {% block body %}<h3>{{ texte }}</h3>
+    {{ dump(texte) }}{% endblock %}        
+    
+    
