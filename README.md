@@ -302,4 +302,5 @@ Utilisez la commande:
 
     php bin/console cache:clear
     
-        
+### Récupérez les dossiers images, fonts et css
+Depuis l'archive et mettez les dans le répertoire public        
