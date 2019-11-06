@@ -268,8 +268,29 @@ Cette barre est très utile en mode développement !
     {% block body %}<h3>{{ texte }}</h3>
     {{ dump(texte) }}{% endblock %}        
     
-### installation d'outils de débogage
+### Installation d'outils de débogage
 
     composer require debug --dev  
 Le dump apparaît maintenant dans la barre du profiler
-     
+#### On peut séparer les packs !
+Avant dans composer.json:
+
+    "require-dev": {
+            "sensiolabs/security-checker": "^6.0",
+            "symfony/debug-pack": "^1.0",
+            "symfony/profiler-pack": "^1.0"
+        },
+On décide de récupérer individuellement les librairies qui la compose :
+        
+    composer unpack debug    
+On obtient les librairies qui compose le pack, on peut ainsi ne garder que celles qu'on souhaite!
+
+    "require-dev": {
+            "easycorp/easy-log-handler": "^1.0.7",
+            "sensiolabs/security-checker": "^6.0",
+            "symfony/debug-bundle": "*",
+            "symfony/monolog-bundle": "^3.0",
+            "symfony/profiler-pack": "*",
+            "symfony/var-dumper": "*"
+        },
+            
