@@ -303,4 +303,14 @@ Utilisez la commande:
     php bin/console cache:clear
     
 ### Récupérez les dossiers images, fonts et css
-Depuis l'archive et mettez les dans le répertoire public        
+Depuis l'archive (start/tutorial/templates/) et mettez les dans le répertoire public      
+
+#### chargement des fichiers .css depuis base.html.twig  
+
+en cherchant simplement dans public
+
+    {% block stylesheets %}
+     <link rel="stylesheet" href="/css/font-awesome.css">
+     <link rel="stylesheet" href="/css/styles.css">
+     
+     
