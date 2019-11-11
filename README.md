@@ -326,4 +326,24 @@ en cherchant simplement dans public
     Ligne 35:  <img class="nav-profile-img rounded-circle" 
     src="{{ asset('images/astronaut-profile.png') }}">  
     
+### Transformez article.html.twig 
+
+en news.html.twig
+
+### changez dans le contrôleur:
+#####ArticleController.php
+
+    public function show($slug)
+        {
+            dump($slug, $this);
+            $comments = [
+                'I ate a normal rock once. It did NOT taste like bacon!',
+                'Woohoo! I\'m going on an all-asteroid diet!',
+                'I like bacon too! Buy some from my site! bakinsomebacon.com',
+            ];
+            return $this->render('news/news.html.twig',[
+                    'comments' => $comments,
+                    'title' => ucwords(str_replace('-', ' ', $slug))]
+            );
+        }
       

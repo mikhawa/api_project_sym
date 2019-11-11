@@ -29,10 +29,14 @@ class ArticleController extends AbstractController
     public function show($slug)
     {
         dump($slug, $this);
+        $comments = [
+            'I ate a normal rock once. It did NOT taste like bacon!',
+            'Woohoo! I\'m going on an all-asteroid diet!',
+            'I like bacon too! Buy some from my site! bakinsomebacon.com',
+        ];
         return $this->render('news/news.html.twig',[
-            "texte"=>(sprintf(
-            'Le nom de la page sera: "%s"',
-            $slug))]
+                'comments' => $comments,
+                'title' => ucwords(str_replace('-', ' ', $slug))]
         );
     }
 }
