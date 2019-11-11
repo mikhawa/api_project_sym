@@ -379,5 +379,7 @@ Dans ArticleController.php :
       public function show($slug)
       {  
       ...
-      
+suite:
+
+https://symfonycasts.com/screencast/symfony/javascript#play      
                       
