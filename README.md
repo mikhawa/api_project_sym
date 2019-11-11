@@ -366,4 +366,18 @@ Dans templates/news/ depuis
     {
         return $this->render('news/homepage.html.twig');
     }
-                       
+### Lien avec variable GET
+Dans homepage.html.twig (+-Ligne 22) :
+
+    <a href="{{ path('articles', 
+    {slug: 'why-asteroids-taste-like-bacon'}) }}">         
+Dans ArticleController.php :
+
+     /**
+      * @Route("/news/{slug}", name="articles")
+      */
+      public function show($slug)
+      {  
+      ...
+      
+                      
