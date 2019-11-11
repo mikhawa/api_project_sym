@@ -15,11 +15,11 @@ class ArticleController extends AbstractController
 {
     // méthode d'accueil avec annotations
     /**
-     * @Route("/")
+     * @Route("/", name="accueil")
      */
     public function accueil()
     {
-        return new Response('mon premier texte envoyé... bon ok Hello World');
+        return $this->render('news/homepage.html.twig');
     }
 
 

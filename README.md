@@ -346,4 +346,24 @@ en news.html.twig
                     'title' => ucwords(str_replace('-', ' ', $slug))]
             );
         }
-      
+### Path en Twig
+Permet d'atteindre une route dans un lien Twig
+
+    {{ path('app_article_accueil') }}
+### Renommer une route en annotation
+
+    /**
+     * @Route("/", name="accueil")
+     */   
+#### Déplacement de homepage.html.twig     
+Dans templates/news/ depuis 
+    
+    datas\code-symfony\start\tutorial\templates\homepage.html.twig
+
+#### changement de ArticleController.php
+
+    public function accueil()
+    {
+        return $this->render('news/homepage.html.twig');
+    }
+                       
