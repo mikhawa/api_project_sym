@@ -451,4 +451,22 @@ Dans news.html.twig (+- ligne 17):
          'comments' => $comments,
          'title' => ucwords(str_replace('-', ' ', $slug)),
          'slug' => $slug,]
-     );         
+     );     
+#### Modification de article_show.js    
+
+    $(document).ready(function() {
+        $('.js-like-article').on('click', function(e) {
+            e.preventDefault();
+    
+            var $link = $(e.currentTarget);
+            $link.toggleClass('fa-heart-o').toggleClass('fa-heart');
+    
+            $.ajax({
+                method: 'POST',
+                url: $link.attr('href')
+            }).done(function(data) {
+                $('.js-like-article-count').html(data.hearts);
+            })
+        });
+    });
+Et voilà, ça fonctionne !         
