@@ -392,5 +392,22 @@ Dans public/js/ avec le code minimal :
 Dans news.html.twig avant le block body :
 
     {% block title %}Read: {{ title }}{% endblock %}
+#### Création du span pour l'AJAX
+Dans news.html.twig  (+- ligne 17) on entoure le 5 par le span : 
+
+    <span class="js-like-article-count">5</span>
+#### Ajout dans article_show.js
+
+    $(document).ready(function() {
+        $('.js-like-article').on('click', function(e) {
+            e.preventDefault();
     
+            var $link = $(e.currentTarget);
+            $link.toggleClass('fa-heart-o').toggleClass('fa-heart');
+    
+            $('.js-like-article-count').html('TEST');
+        });
+    });
+    
+        
                       
