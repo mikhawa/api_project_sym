@@ -5,8 +5,8 @@ namespace App\Controller;
 
 // dépendance pour utiliser Twig et les autres dépendances liées au contrôleur:
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-// dépendance pour envoyer une réponse :
-use Symfony\Component\HttpFoundation\Response;
+// dépendance pour utiliser json :
+use Symfony\Component\HttpFoundation\JsonResponse;
 // dépendance pour les annotations
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -36,15 +36,17 @@ class ArticleController extends AbstractController
         ];
         return $this->render('news/news.html.twig',[
                 'comments' => $comments,
-                'title' => ucwords(str_replace('-', ' ', $slug))]
+                'title' => ucwords(str_replace('-', ' ', $slug)),
+                'slug' => $slug,]
         );
     }
 
     /**
-     * @Route("/news/{slug}/heart", name="article_toggle_heart")
+     * @Route("/news/{slug}/heart", name="article_toggle_heart", methods={"POST"})
      */
     public function toggleArticleHeart($slug)
     {
         // TODO - actually heart/unheart the article!
+        return new JsonResponse(['hearts' => random_int(5, 100)]);
     }
 }

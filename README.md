@@ -424,10 +424,31 @@ Voila, si vous cliquez sur le coeur "TEST" remplace le 5
 #### Création de la méthode pour le coeur
 Dans ArticleController.php
 
+    // dépendance pour utiliser json :
+    use Symfony\Component\HttpFoundation\JsonResponse;
+    
+    ...
+    
     /**
-     * @Route("/news/{slug}/heart", name="article_toggle_heart")
+     * @Route("/news/{slug}/heart", name="article_toggle_heart", methods={"POST"})
      */
     public function toggleArticleHeart($slug)
     {
         // TODO - actually heart/unheart the article!
-    }    
+        return new JsonResponse(['hearts' => random_int(5, 100)]);
+    }   
+#### Mise en place du lien
+Dans news.html.twig (+- ligne 17):
+
+    <span class="pl-2 article-details"> 
+    <span class="js-like-article-count">5</span> 
+    <a href="{{ path('article_toggle_heart', {slug: slug}) }}" 
+    class="fa fa-heart-o like-article  js-like-article"></a> 
+    </span>
+#### Ajout de l'argument slug à la méthode show
+
+    return $this->render('news/news.html.twig',[
+         'comments' => $comments,
+         'title' => ucwords(str_replace('-', ' ', $slug)),
+         'slug' => $slug,]
+     );         
