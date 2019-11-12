@@ -380,7 +380,7 @@ Dans ArticleController.php :
       {  
       ...
 
-### Javascript
+### Javascript / AJAX
 Utilisation de Javascript avec Jquery
 #### Création de article_show.js
 Dans public/js/ avec le code minimal :
@@ -420,4 +420,14 @@ En dehors de tout autre block :
         <script src="{{ asset('js/article_show.js') }}"></script>
     {% endblock %}    
         
-Voila, si vous cliquez sur le coeur "TEST" remplace le 5                      
+Voila, si vous cliquez sur le coeur "TEST" remplace le 5                 
+#### Création de la méthode pour le coeur
+Dans ArticleController.php
+
+    /**
+     * @Route("/news/{slug}/heart", name="article_toggle_heart")
+     */
+    public function toggleArticleHeart($slug)
+    {
+        // TODO - actually heart/unheart the article!
+    }    

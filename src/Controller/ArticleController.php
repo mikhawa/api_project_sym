@@ -39,4 +39,12 @@ class ArticleController extends AbstractController
                 'title' => ucwords(str_replace('-', ' ', $slug))]
         );
     }
+
+    /**
+     * @Route("/news/{slug}/heart", name="article_toggle_heart")
+     */
+    public function toggleArticleHeart($slug)
+    {
+        // TODO - actually heart/unheart the article!
+    }
 }
