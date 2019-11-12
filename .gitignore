@@ -7,8 +7,10 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-/.idea/
 
+###> PhpStorm ###
+/.idea/
+###< PhpStorm ###
 
 ###> symfony/web-server-bundle ###
 /.web-server-pid
