@@ -379,7 +379,18 @@ Dans ArticleController.php :
       public function show($slug)
       {  
       ...
-suite:
 
-https://symfonycasts.com/screencast/symfony/javascript#play      
+### Javascript
+Utilisation de Javascript avec Jquery
+#### Création de article_show.js
+Dans public/js/ avec le code minimal :
+
+       $(document).ready(function() {
+       
+       });
+#### Ajout du titre
+Dans news.html.twig avant le block body :
+
+    {% block title %}Read: {{ title }}{% endblock %}
+    
                       
