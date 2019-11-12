@@ -396,6 +396,10 @@ Dans news.html.twig avant le block body :
 Dans news.html.twig  (+- ligne 17) on entoure le 5 par le span : 
 
     <span class="js-like-article-count">5</span>
+Et on rajoute  js-like-article à la classe entourant le coeur (même ligne)
+
+    <a href="#" class="fa fa-heart-o like-article  js-like-article"></a>
+        
 #### Ajout dans article_show.js
 
     $(document).ready(function() {
@@ -408,6 +412,12 @@ Dans news.html.twig  (+- ligne 17) on entoure le 5 par le span :
             $('.js-like-article-count').html('TEST');
         });
     });
-    
+#### Pour ajouter le script que sur la page news.html.twig
+En dehors de tout autre block :
+
+    {% block javascripts %}
+        {{ parent() }}
+        <script src="{{ asset('js/article_show.js') }}"></script>
+    {% endblock %}    
         
-                      
+Voila, si vous cliquez sur le coeur "TEST" remplace le 5                      
