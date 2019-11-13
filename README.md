@@ -489,4 +489,9 @@ et dans la méthode toggleArticleHeart() :
         $logger->info('Article is being hearted!');
         return new JsonResponse(['hearts' => random_int(5, 100)]);
     }     
-En utilisant le tail -f var/log/dev.log vu plus haut, à chaque clic sur le coeur nous voyons que l'article est aimé      
+En utilisant le tail -f var/log/dev.log vu plus haut, à chaque clic sur le coeur nous voyons que l'article est aimé 
+
+Pour voir tous les services activés:
+
+      php bin/console debug:autowiring --all
+   
