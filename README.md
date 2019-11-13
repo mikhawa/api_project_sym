@@ -470,3 +470,23 @@ Dans news.html.twig (+- ligne 17):
         });
     });
 Et voilà, ça fonctionne !         
+### Les services
+Un service est simplement un objet PHP qui remplit une fonction, associé à une configuration.
+#### Utilisation du service de log
+Les logs peuvent déjà être affichés via la commande PHP :
+
+    tail -f var/log/dev.log
+    
+Symfony a son propre service de log: LoggerInterface.
+
+Ajoutons celui-ci à ArticleController :
+
+    use Psr\Log\LoggerInterface;
+et dans la méthode toggleArticleHeart() : 
+
+    public function toggleArticleHeart($slug, LoggerInterface $logger)
+    {
+        $logger->info('Article is being hearted!');
+        return new JsonResponse(['hearts' => random_int(5, 100)]);
+    }     
+En utilisant le tail -f var/log/dev.log vu plus haut, à chaque clic sur le coeur nous voyons que l'article est aimé      
