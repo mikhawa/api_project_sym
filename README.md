@@ -498,3 +498,14 @@ Pour voir tous les services activés:
 #### Utilisation du service markdown
 
     composer require knplabs/knp-markdown-bundle
+Mettre dans le fichier un texte en heredoc -> https://www.php.net/manual/fr/language.types.string.php
+
+    <<<EOF
+    Spicy **jalapeno bacon** ipsum dolor amet veniam.
+    lorem proident [beef ribs](https://baconipsum.com/). 
+    Dolore reprehenderit labore minim pork belly. 
+    
+    Elit exercitation eiusmod dolore cow
+    turkey shank eu pork belly meatball non cupim.
+    EOF;
+        
