@@ -58,6 +58,7 @@ fugiat.
 EOF;
 
         return $this->render('news/news.html.twig',[
+                'articleContent' => $articleContent,
                 'comments' => $comments,
                 'title' => ucwords(str_replace('-', ' ', $slug)),
                 'slug' => $slug,]
