@@ -508,4 +508,17 @@ Mettre dans le fichier un texte en heredoc -> https://www.php.net/manual/fr/lang
     Elit exercitation eiusmod dolore cow
     turkey shank eu pork belly meatball non cupim.
     EOF;
-        
+Ajouter dans ArticleController.php
+
+    // dépendance pour le markdown
+    use Michelf\MarkdownInterface;
+    ...
+    public function show($slug, MarkdownInterface $markdown)
+    ...
+    EOF;
+    $articleContent = $markdown->transform($articleContent); 
+Voilà, notre texte est retranscrit en markdown (.md), vous trouverez les règles ici:
+
+https://www.markdownguide.org/basic-syntax/
+
+           

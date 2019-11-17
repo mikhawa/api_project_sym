@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 // dépendance pour les logs
 use Psr\Log\LoggerInterface;
+// dépendance pour le markdown
+use Michelf\MarkdownInterface;
 
 // class
 class ArticleController extends AbstractController
@@ -28,7 +30,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/news/{slug}", name="articles")
      */
-    public function show($slug)
+    public function show($slug, MarkdownInterface $markdown)
     {
         dump($slug, $this);
         $comments = [
@@ -56,7 +58,7 @@ strip steak pork belly aliquip capicola officia. Labore deserunt esse chicken lo
 cow est ribeye adipisicing. Pig hamburger pork belly enim. Do porchetta minim capicola irure pancetta chuck
 fugiat.
 EOF;
-
+        $articleContent = $markdown->transform($articleContent);
         return $this->render('news/news.html.twig',[
                 'articleContent' => $articleContent,
                 'comments' => $comments,
