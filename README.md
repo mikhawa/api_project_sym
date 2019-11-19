@@ -559,4 +559,6 @@ Par
 
     APP_ENV=prod
 Attention, il faut commenter les dump() dans le contrôleur !
-                  
+### Création d'un service
+Créons d'abord un dossier Service dans src, puis créons-y la classe MarkdownHelper.php   
+               
