@@ -560,5 +560,15 @@ Par
     APP_ENV=prod
 Attention, il faut commenter les dump() dans le contrôleur !
 ### Création d'un service
-Créons d'abord un dossier Service dans src, puis créons-y la classe MarkdownHelper.php   
+Créons d'abord un dossier Service dans src, puis créons-y la classe MarkdownHelper.php contenant
+
+    namespace App\Service;
+    
+    
+    class MarkdownHelper
+    {
+    
+    }
+
+https://symfonycasts.com/screencast/symfony-fundamentals/create-service#play      
                
