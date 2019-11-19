@@ -550,4 +550,13 @@ Pour vérifier son activation :
     php bin/console debug:autowiring     
 pour voir tous les services activés :
 
-    php bin/console debug:container --show-private                                   
+    php bin/console debug:container --show-private                       
+### Passage en production
+Pour passer en production, changer dans le fichier .env 
+
+    APP_ENV=dev
+Par 
+
+    APP_ENV=prod
+Attention, il faut commenter les dump() dans le contrôleur !
+                  
