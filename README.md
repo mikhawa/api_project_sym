@@ -521,4 +521,33 @@ Voilà, notre texte est retranscrit en markdown (.md), vous trouverez les règle
 
 https://www.markdownguide.org/basic-syntax/
 
-           
+#### Pour voir la configuration d'un service
+Nous pouvons voir la configuration par défaut et les options possibles de Twig en utilisant la commande :
+
+    php bin/console config:dump TwigBundle   
+        ou
+    php bin/console config:dump twig
+Pour voir tous les Bundle avec leurs alias :
+
+    php bin/console config:dump
+#### Modifions le service knp_markdown    
+Regardons knp_markdown :  
+
+    php bin/console config:dump knp_markdown
+Créons ensuite un fichier dans config/packages en yaml :
+
+    config/packages/knp_markdown.yml
+avec comme contenu :
+
+    knp_markdown:
+        parser:
+            service: markdown.parser.light
+Pour voir le changement de configuration du markdown :
+
+     php bin/console config:dump knp_markdown           
+Pour vérifier son activation : 
+
+    php bin/console debug:autowiring     
+pour voir tous les services activés :
+
+    php bin/console debug:container --show-private                                   
