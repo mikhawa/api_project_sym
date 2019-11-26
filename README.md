@@ -561,9 +561,30 @@ Par
 Attention, il faut commenter les dump() dans le contrôleur !
 ### Installation de maker
 
-    composer require maker --dev
+    composer require maker --dev  
 
 N'oubliez pas de repasser en mode dev dans .env !    
 
+### passage à la version LTS
+LTS: Long-Term Support (ici la 4.4.*)
+
+Remplacez dans composer.json, en bas de fichier:
+
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "4.3.*"
+        }
+    }
+par :
+
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "4.4.*"
+        }
+    }
+ puis faîtes un composer update
+ 
     
                
